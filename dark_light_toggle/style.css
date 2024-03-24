@@ -1,0 +1,89 @@
+body {
+  --background-color: #fff;
+  --secondary-color: orangered;
+  --text-color: #333;
+  --transition-delay: 1s;
+  margin: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition-duration: var(--transition-delay);
+}
+
+.toggleIcon {
+  width: 2em;
+  margin-right: 0.5em;
+  fill: var(--background-color);
+}
+
+body.black {
+  --background-color: #333;
+  --secondary-color: #f4e06f;
+  --text-color: #fff;
+}
+
+.swapBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1.5em;
+  font-size: large;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition-delay);
+}
+
+.sun-moon-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  pointer-events: none;
+  --rotation: 0;
+  transform: rotate(var(--rotation));
+  transition-duration: var(--transition-delay);
+}
+
+.black .sun-moon-container {
+  --rotation: 180deg;
+  transform: rotate(var(--rotation));
+  transition-duration: var(--transition-delay);
+}
+.sun,
+.moon {
+  width: 4em;
+  position: absolute;
+  fill: var(--secondary-color);
+  transition-duration: var(--transition-delay);
+  transform: rotate(var(--rotation));
+}
+
+.black .moon {
+  opacity: 1;
+}
+
+.sun {
+  top: 5%;
+}
+
+.moon {
+  bottom: 5%;
+  opacity: 0;
+}
+.black .moon {
+  opacity: 1;
+}
+.black .sun {
+  opacity: 0;
+}
