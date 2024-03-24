@@ -49,6 +49,8 @@ body.black {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
   --rotation: 0;
   transform: rotate(var(--rotation));
